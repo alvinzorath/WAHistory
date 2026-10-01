@@ -37,11 +37,11 @@ jobs:
           unzip WAHistory_Android_Project.zip -d project
 
       - name: Build APK
-        working-directory: project/WAHistory_Android_Project
+        working-directory: project
         run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: WAHistory-APK
-          path: project/WAHistory_Android_Project/app/build/outputs/apk/debug/app-debug.apk
+          path: project/app/build/outputs/apk/debug/app-debug.apk
